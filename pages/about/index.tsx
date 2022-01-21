@@ -1,13 +1,13 @@
-import type { NextPage } from 'next';
+import { NextPage } from 'next';
 import { Container, Header, Segment } from 'semantic-ui-react';
 
-const Home: NextPage = () => {
+const About: NextPage = () => {
   return (
     <Container>
       <Segment inverted>
         <Header
           as='h1'
-          content='Welcome'
+          content='About Us'
           style={{
             fontSize: '4em',
             fontWeight: 'normal',
@@ -21,4 +21,4 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default About;

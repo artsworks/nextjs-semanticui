@@ -1,13 +1,16 @@
-import type { NextPage } from 'next';
-import { Container, Header, Segment } from 'semantic-ui-react';
+import { NextPage } from 'next';
+import { useRouter } from 'next/router';
+import { Button, Container, Header, Segment } from 'semantic-ui-react';
 
-const Home: NextPage = () => {
+const Register: NextPage = () => {
+  const router = useRouter();
+
   return (
     <Container>
       <Segment inverted>
         <Header
           as='h1'
-          content='Welcome'
+          content='Register'
           style={{
             fontSize: '4em',
             fontWeight: 'normal',
@@ -17,8 +20,9 @@ const Home: NextPage = () => {
         />
       </Segment>
       <Segment>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc porta dictum magna vel accumsan. Etiam elementum posuere ipsum at condimentum.</Segment>
+      <Button onClick={() => router.push('/register/1')} positive>Start</Button>
     </Container>
   );
 };
 
-export default Home;
+export default Register;

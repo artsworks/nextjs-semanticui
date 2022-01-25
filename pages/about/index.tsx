@@ -1,7 +1,11 @@
 import { NextPage } from 'next';
 import { Container, Header, Segment } from 'semantic-ui-react';
+import ButtonColor from '../../components/buttonColor';
+import SectionColor from '../../components/sectionColor';
 
 const About: NextPage = () => {
+  console.log('Page - About..');
+
   return (
     <Container>
       <Segment inverted>
@@ -16,7 +20,11 @@ const About: NextPage = () => {
           }}
         />
       </Segment>
-      <Segment>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc porta dictum magna vel accumsan. Etiam elementum posuere ipsum at condimentum.</Segment>
+      <Segment>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc porta dictum magna vel accumsan. Etiam elementum posuere ipsum at condimentum.</p>
+      </Segment>
+      <SectionColor></SectionColor>
+      <ButtonColor></ButtonColor>
     </Container>
   );
 };

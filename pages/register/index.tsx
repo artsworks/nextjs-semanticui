@@ -3,6 +3,8 @@ import { useRouter } from 'next/router';
 import { Button, Container, Header, Segment } from 'semantic-ui-react';
 
 const Register: NextPage = () => {
+  console.log('Page - Register..');
+
   const router = useRouter();
 
   return (
@@ -20,7 +22,9 @@ const Register: NextPage = () => {
         />
       </Segment>
       <Segment>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc porta dictum magna vel accumsan. Etiam elementum posuere ipsum at condimentum.</Segment>
-      <Button onClick={() => router.push('/register/1')} positive>Start</Button>
+      <Button onClick={() => router.push('/register/1')} positive>
+        Start
+      </Button>
     </Container>
   );
 };

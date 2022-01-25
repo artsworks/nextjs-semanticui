@@ -2,6 +2,8 @@ import type { NextPage } from 'next';
 import { Container, Header, Segment } from 'semantic-ui-react';
 
 const Home: NextPage = () => {
+  console.log('Page - Home..');
+
   return (
     <Container>
       <Segment inverted>

@@ -1,7 +1,8 @@
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Button, Form, Icon, Image, Modal, Segment, Step } from 'semantic-ui-react';
+import { DataContext } from '../../providers/dataProvider';
 
 const RegisterStep: NextPage = () => {
   const router = useRouter();
@@ -10,12 +11,13 @@ const RegisterStep: NextPage = () => {
   const stepNumber = parseInt(`${step ?? 1}`);
   const stepMax = 3;
 
-  const initialFormState = { firstname: '', lastname: '', title: '', color: '' };
-  const [formState, setFormState] = useState(initialFormState);
+  const { form, dispatch } = useContext(DataContext);
+
+  const [formState, setFormState] = useState(form);
   const { firstname, lastname, title, color } = formState;
 
   const handleChange = ({ name, value }: any) => {
-    return setFormState({ ...formState, [name]: value });
+    setFormState({ ...formState, [name]: value });
   };
 
   const handleOpen = () => {
@@ -26,8 +28,9 @@ const RegisterStep: NextPage = () => {
     router.push('/register');
   };
 
-  console.log('its me mario..');
-  console.log('formState: ', formState);
+  useEffect(() => {
+    dispatch({ type: 'UpdateForm', value: formState });
+  }, [formState, dispatch]);
 
   return (
     <Modal open={true} onOpen={handleOpen} onClose={handleClose}>
